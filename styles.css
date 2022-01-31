@@ -1,0 +1,46 @@
+/* to create the paralax effect we need an element it wont 
+work inside the body */
+body{
+    margin: 0;
+}
+.wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* to use the 3d effect use 3d perspective*/
+    perspective: 10px;
+}
+header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+.back{
+    transform: translateZ(-10px) scale(2);
+}
+.front{
+    transform: translateZ(-5px) scale(1.5);
+}
+.back,
+.front{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.title{
+    font-size: 7rem;
+    color:white;
+    text-shadow: 0 0 5px black;
+}
+section{
+    font-size: 2rem;
+    padding: 2;
+    background-color: #333;
+    color:white;
+}
